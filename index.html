@@ -51,6 +51,12 @@
             font-size: 40px;
         }
 
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         #button {
             background: #000;
             outline: none;
@@ -82,16 +88,21 @@
     </div>
 
     <form>
-        <input autocomplete="off" type="text" placeholder="24" name="hour" id="hour">
-        <input autocomplete="off" type="text" placeholder="24" name="minute" id="minute">
-        <input autocomplete="off" type="text" placeholder="24" name="second" id="second">
+        <input
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            autocomplete="off" maxlength="2" type="number" placeholder="24" name="hour" id="hour">
+        <input
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            autocomplete="off" maxlength="2" type="number" placeholder="24" name="minute" id="minute">
+        <input
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            autocomplete="off" maxlength="2" type="number" placeholder="24" name="second" id="second">
     </form>
     <div id="buttons">
         <button onclick="timesetter()" id="button">Set Time</button>
         <button onclick="resetTimer()" id="button">Reset Time</button>
     </div>
 
-    <audio src="alert.mp3" autoplay hidden id="audio"></audio>
     <script src="script.js"></script>
 
 </body>

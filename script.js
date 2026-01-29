@@ -35,10 +35,11 @@ setInterval(() => {
 
 
 function timesetter() {
-
     if (Number.parseInt(document.getElementById("hour").value) > ((is24) ? 23 : 12) || Number.parseInt(document.getElementById("minute").value) > 59 || Number.parseInt(document.getElementById("second").value) > 59) {
         let setter = document.getElementById("button");
-        document.getElementById("audio").play();
+        new Audio('alert.mp3').play()
+
+
         setter.style.backgroundColor = "#ff0000";
         setTimeout(() => {
             setter.style.backgroundColor = "#000000";
@@ -61,7 +62,7 @@ function timesetter() {
         setTimeout(() => {
             setter.style.backgroundColor = "#000000";
         }, 700)
-        
+
         return;
     }
     hour = document.getElementById("hour").value || hour;
