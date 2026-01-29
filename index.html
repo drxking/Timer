@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heello</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Bitcount Single" !important;
+            background-color: #e5e5e5;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #e5e5e5;
+            flex-direction: column;
+        }
+
+        form {
+            width: 200px;
+            display: flex;
+            gap: 4px;
+            margin-top: 10px;
+        }
+
+        input {
+            flex-shrink: 0;
+            width: 100%;
+            flex: 1;
+            font-size: 30px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        #timer {
+            font-size: 40px;
+        }
+
+        #button {
+            background: #000;
+            outline: none;
+            border: none;
+            color: #fff;
+            margin-top: 20px;
+            /* font-family: "Bitcount Single" !important; */
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            cursor: pointer;
+
+        }
+
+        #buttons {
+            display: flex;
+            gap: 4px;
+            transition-duration: 100ms;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="timer">
+        <span id="hrs">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+    </div>
+
+    <form>
+        <input autocomplete="off" type="text" placeholder="24" name="hour" id="hour">
+        <input autocomplete="off" type="text" placeholder="24" name="minute" id="minute">
+        <input autocomplete="off" type="text" placeholder="24" name="second" id="second">
+    </form>
+    <div id="buttons">
+        <button onclick="timesetter()" id="button">Set Time</button>
+        <button onclick="resetTimer()" id="button">Reset Time</button>
+    </div>
+
+    <audio src="alert.mp3" autoplay hidden id="audio"></audio>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
