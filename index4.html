@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .divs {
+            height: 100vh;
+            width: 50vw;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="trigger()">
+        <button>sdf</button>
+        <input type="submit" value="submit">
+
+    </form>
+
+    <div onclick="trigger()" class="divs"></div>
+    <script>
+
+        let arr = [1, 22, 3, 4, 5]
+        let arr2 = arr.forEach(e => {
+            if (e < 10) {
+                console.log("Number is Lesser than 10 " + e)
+            }
+        })
+
+        console.log(arr2)
+        let arr1 = arr.map(_ => {
+            if (_ < 10) {
+                return _
+            } else {
+                return false
+            }
+        })
+
+        console.log(arr1)
+
+
+        let arr3 = arr.filter(_ => {
+            if (_ < 10) {
+                return true
+            } else {
+                return false
+            }
+        })
+
+        console.log(arr3);
+
+        let arr4 = arr.reduce((acc, e) => {
+            console.log(acc)
+            return acc+e;
+        },0)
+        console.log(arr4)
+
+
+    </script>
+</body>
+
+</html>

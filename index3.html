@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <input placeholder="Enter your Mark" type="number" id="marks">
+        <button onclick="checker()" id="submit_button">Check</button>
+        <input value="submit" type="submit">
+
+
+    </form>
+    <script>
+        let inputField = document.getElementById("marks");
+        function checker() {
+            let data = inputField.value;
+            data = Number.parseInt(data);
+            if (data > 100 || data < 0) {
+                return alert("Please Enter value between 0 to 100")
+            }
+            if (data == 100) {
+                alert("4 GPA!!!")
+            }
+            else if (data >= 90) {
+                alert("Grade A")
+            } else if (data <= 89 && data >= 80) {
+                alert("Garde B")
+            } else if (data <= 79 && data >= 70) {
+                alert("Grade C")
+            } else if (data <= 69 && data >= 60) {
+                alert("Grade D")
+            } else {
+                alert("Grade F(Fail)")
+            }
+        }
+    </script>
+</body>
+
+</html>
